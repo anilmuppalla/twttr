@@ -15,7 +15,7 @@ export default function Home() {
     useEffect(() => {
         let content_arr = [];
         let num_chars = content.length;
-        console.log(num_chars);
+        // console.log(num_chars);
         if (num_chars < tweetLength) {
             content_arr.push(content);
             setThreadContent(content_arr);
@@ -28,7 +28,7 @@ export default function Home() {
             }
             setThreadContent(content_arr);
         }
-        console.log(content_arr);
+        // console.log(content_arr);
     }, [content]);
 
     let tweets = [];
@@ -93,4 +93,3 @@ export default function Home() {
         </div>
     );
 }
-[[[]]];
