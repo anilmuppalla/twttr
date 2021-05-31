@@ -6,24 +6,24 @@ export default function Home() {
     const [content, setContent] = useState('');
     const [thread_content, setThreadContent] = useState([]);
     const inputRef = useRef(null);
+    const tweetLength = 280;
 
     useEffect(() => {
         inputRef.current.focus();
     }, [inputRef]);
 
     useEffect(() => {
+        let content_arr = [];
         let num_chars = content.length;
         console.log(num_chars);
-        let content_arr = [];
-        if (num_chars < 280) {
+        if (num_chars < tweetLength) {
             content_arr.push(content);
             setThreadContent(content_arr);
         } else {
             let index = 0;
             while (index < num_chars) {
-                content_arr.push(content.slice(index, index + 280));
-                console.log(content_arr);
-                index += 280;
+                content_arr.push(content.slice(index, index + tweetLength));
+                index += tweetLength;
                 console.log(index);
             }
             setThreadContent(content_arr);
@@ -66,9 +66,9 @@ export default function Home() {
                             fill="currentColor"
                         >
                             <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                                clip-rule="evenodd"
+                                clipRule="evenodd"
                             />
                         </svg>
                     </button>
@@ -93,3 +93,4 @@ export default function Home() {
         </div>
     );
 }
+[[[]]];
